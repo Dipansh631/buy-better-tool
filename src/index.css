@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* E-Commerce Price Prediction Tool Design System
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Main Background & Foreground */
+    --background: 225 25% 5%;
+    --foreground: 220 15% 95%;
+
+    /* Card System */
+    --card: 225 20% 8%;
+    --card-foreground: 220 15% 95%;
+
+    /* Popover System */
+    --popover: 225 20% 8%;
+    --popover-foreground: 220 15% 95%;
+
+    /* Primary Tech Blue System */
+    --primary: 220 80% 45%;
+    --primary-foreground: 220 15% 95%;
+    --primary-glow: 220 80% 65%;
+    
+    /* Secondary System */
+    --secondary: 225 15% 12%;
+    --secondary-foreground: 220 15% 95%;
+
+    /* Muted System */
+    --muted: 225 10% 15%;
+    --muted-foreground: 220 10% 65%;
+
+    /* Accent System */
+    --accent: 225 15% 12%;
+    --accent-foreground: 220 15% 95%;
+
+    /* Success (Price Drop/Savings) */
+    --success: 142 76% 36%;
+    --success-foreground: 220 15% 95%;
+    --success-glow: 142 76% 50%;
+
+    /* Warning (Neutral Prediction) */
+    --warning: 43 96% 56%;
+    --warning-foreground: 225 25% 5%;
+
+    /* Destructive (Price Increase) */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 15% 95%;
+
+    /* Border & Input */
+    --border: 225 15% 18%;
+    --input: 225 15% 18%;
+    --ring: 220 80% 45%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(225 25% 5%), hsl(220 20% 8%));
+    --gradient-card: linear-gradient(135deg, hsl(225 20% 8% / 0.8), hsl(225 15% 12% / 0.6));
+
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.2);
+    --shadow-success: 0 0 30px hsl(var(--success-glow) / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(225 25% 5% / 0.4);
+
+    /* Animation & Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Chat Interface Styles */
+  .chat-message-user {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .chat-message-assistant {
+    @apply bg-muted text-foreground;
+  }
+  
+  /* Floating Chat Button Animation */
+  .floating-chat-button {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Chat Typing Indicator */
+  .typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: hsl(var(--muted-foreground));
+    animation: typing 1.4s infinite ease-in-out;
+  }
+  
+  .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+  .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+  
+  @keyframes typing {
+    0%, 80%, 100% {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+    40% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
