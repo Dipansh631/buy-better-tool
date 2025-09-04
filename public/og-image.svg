@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"/>
+  
+  <!-- Background pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Logo -->
+  <g transform="translate(100, 165)">
+    <rect width="120" height="120" rx="20" fill="white"/>
+    <text x="60" y="80" text-anchor="middle" fill="#3B82F6" font-family="Arial, sans-serif" font-size="48" font-weight="bold">PP</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="280" y="200" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">PricePredict AI</text>
+  <text x="280" y="260" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="24">Smart E-Commerce Price Tracking & Prediction</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="1000" cy="150" r="60" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="1100" cy="480" r="80" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="900" cy="500" r="40" fill="rgba(255,255,255,0.1)"/>
+</svg>
